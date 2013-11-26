@@ -90,9 +90,9 @@ exports.parseString = function(input, options, done) {
 	});
 
 	if (opts.header) {
-		var headerRow = cells[options.preHeaderRows];
+		var headerRow = cells[opts.preHeaderRows];
 		var rows = [];
-		_.each(_.rest(cells, options.preHeaderRows + 1), function(row, n) {
+		_.each(_.rest(cells, opts.preHeaderRows + 1), function(row, n) {
 			if (row.length != headerRow.length) {
 				// Skip row
 				console.log('Row %d lengths do not match. Header has %d columns, but the row has %d.', n, headerRow.length, row.length);
