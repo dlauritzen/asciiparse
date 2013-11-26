@@ -37,6 +37,7 @@ The `options` field is optional and can be omitted in favor of the defaults. If 
 * header             (true): If false, a two-dimensional array is returned. If true, the first row is treated as column names and an array of objects keyed by column is returned
 * emptyCells         (true): Whether to keep empty cells. If header is true, setting this to false may cause errors.
 * multilineSeparator ('\n'): The character or string to insert between lines of a multiline cell when collapsed.
+* preHeaderRows         (0): How many rows are _NOT_ header data. Values greater than 0 are edge cases I personally needed to deal with.
 
 ## Examples
 

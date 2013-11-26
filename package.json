@@ -2,7 +2,7 @@
 	"name": "asciiparse",
 	"description": "Parse ascii tables into rows and columns.",
 	"author": "Dallin Lauritzen <dallin@dallinlauritzen.com>",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/dlauritzen/asciiparse.git"

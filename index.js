@@ -10,6 +10,7 @@ var defaultOptions = {
 	header: true, // treat first row as headers. If true, an array of objects is returned, keyed by header. If false, a two-dimensional array.
 	emptyCells: true, // If true, empty cells are retained. If true, header is also recommended to be true.
 	multilineSeparator: '\n', // Separator to place between lines of a multiline cell. All existing whitespace is trimmed before the separator is added.
+	preHeaderRows: 0, // how many rows to skip before the "header" is reached
 }
 
 var specialChars = ['+', '?', '*', '.', '[', ']', '(', ')', '-', '|'];
@@ -89,9 +90,9 @@ exports.parseString = function(input, options, done) {
 	});
 
 	if (opts.header) {
-		var headerRow = cells[0];
+		var headerRow = cells[options.preHeaderRows];
 		var rows = [];
-		_.each(_.rest(cells), function(row, n) {
+		_.each(_.rest(cells, options.preHeaderRows + 1), function(row, n) {
 			if (row.length != headerRow.length) {
 				// Skip row
 				console.log('Row %d lengths do not match. Header has %d columns, but the row has %d.', n, headerRow.length, row.length);
